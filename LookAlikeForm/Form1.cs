@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,12 +10,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace LookAlikeForm
 {
     public partial class Form1 : Form
     {
+        ClothingItem[] clothes = new ClothingItem[1];
         string curr_user = null;
+        string curr_id = null;
         User[] users = new User[]{
              new User("123456789", "dor", "123", "John",
              "Doe", "Johnny", "123-456-7890", new DateTime(1990, 5, 12)),
@@ -27,6 +31,8 @@ namespace LookAlikeForm
 
         public Form1() {
             InitializeComponent();
+            Create_flow(typeof(Sizes), flp_sizes);
+            Create_flow(typeof(Usage), flp_usage);
         }
 
         private void Form1_Load(object sender, EventArgs e) {
@@ -35,16 +41,17 @@ namespace LookAlikeForm
 
         private void btm_sumbit_Click(object sender, EventArgs e) {
             if (btm_sumbit.Enabled) {
-                curr_user = Login(users);
+                curr_user = Login(users,out curr_id);
             }        
         }
 
-        private string Login(User[] users) {
+        private string Login(User[] users,out string userid) {
             string email = txt_email_info.Text;
             string password = txt_pass.Text;
             for (int i = 0; i < users.Length; i++) {
                 if (users[i].Email == email && users[i].Password == password) {
                     btm_sumbit.Enabled = false;
+                    userid = users[i].UserId;
                     return users[i].UserId;
 
                 }
@@ -53,8 +60,37 @@ namespace LookAlikeForm
             txt_email_info.Text = "";
             txt_pass.Text = "";
             MessageBox.Show("Wrong Email or Password. ");
+            userid = null;
             return null;
 
         }
+
+        void Create_flow(Type enum_type, FlowLayoutPanel flp)
+        {
+            flp.Controls.Clear();
+            foreach (Object usage in Enum.GetValues(enum_type))
+            {
+                RadioButton radio_btn = new RadioButton();
+                radio_btn.Text = usage.ToString();
+                radio_btn.AutoSize = true;
+                flp.Controls.Add(radio_btn);
+            }
+        }
+
+        private void btn_create_Click(object sender, EventArgs e)
+        {
+           // ClothingItem item = new ClothingItem(curr_id, btn_id.BackColor.ToString(), txt_name.Text, seasons_to_pass, chk_favorite.Checked, usage_status,
+               // txt_NewItemType.Text, Txt_NewItemBrand.Text, int.Parse(txt_NewItemPrice.Text), size, chk_casual.Checked);
+        }
+
+        private void btn_id_Click(object sender, EventArgs e)
+        {
+            var dlg = new ColorDialog();
+            dlg.Color = btn_id.BackColor;
+            dlg.ShowDialog();
+            btn_id.BackColor = dlg.Color;
+            dlg.Dispose();
+        }
+       // void Markseassons(string[]seasson)
     }
 }
