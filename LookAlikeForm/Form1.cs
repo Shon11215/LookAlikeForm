@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -28,28 +29,36 @@ namespace LookAlikeForm
 
              new User("951753852", "user3@example.com", "Strong789", "Alex",
              "Brown", "Al", "555-666-7777", new DateTime(1998, 12, 3))};
+        bool is_valid = true;
 
-        public Form1() {
+        public Form1()
+        {
             InitializeComponent();
             Create_flow(typeof(Sizes), flp_sizes);
             Create_flow(typeof(Usage), flp_usage);
         }
 
-        private void Form1_Load(object sender, EventArgs e) {
+        private void Form1_Load(object sender, EventArgs e)
+        {
 
         }
 
-        private void btm_sumbit_Click(object sender, EventArgs e) {
-            if (btm_sumbit.Enabled) {
-                curr_user = Login(users,out curr_id);
-            }        
+        private void btm_sumbit_Click(object sender, EventArgs e)
+        {
+            if (btm_sumbit.Enabled)
+            {
+                curr_user = Login(users, out curr_id);
+            }
         }
 
-        private string Login(User[] users,out string userid) {
+        private string Login(User[] users, out string userid)
+        {
             string email = txt_email_info.Text;
             string password = txt_pass.Text;
-            for (int i = 0; i < users.Length; i++) {
-                if (users[i].Email == email && users[i].Password == password) {
+            for (int i = 0; i < users.Length; i++)
+            {
+                if (users[i].Email == email && users[i].Password == password)
+                {
                     btm_sumbit.Enabled = false;
                     userid = users[i].UserId;
                     return users[i].UserId;
@@ -79,10 +88,20 @@ namespace LookAlikeForm
 
         private void btn_create_Click(object sender, EventArgs e)
         {
-           // ClothingItem item = new ClothingItem(curr_id, btn_id.BackColor.ToString(), txt_name.Text, seasons_to_pass, chk_favorite.Checked, usage_status,
-               // txt_NewItemType.Text, Txt_NewItemBrand.Text, int.Parse(txt_NewItemPrice.Text), size, chk_casual.Checked);
-        }
+            if (RadioCheck(flp_sizes) == null && RadioCheck(flp_usage) == null) is_valid = false;
 
+
+            ClothingItem item = new ClothingItem(curr_id, btn_id.BackColor.ToString(), txt_name.Text, Markseassons(), chk_favorite.Checked, RadioCheck(flp_usage),
+                txt_NewItemType.Text, Txt_NewItemBrand.Text, int.Parse(txt_NewItemPrice.Text), RadioCheck(flp_sizes), chk_casual.Checked);
+        }
+        string RadioCheck(FlowLayoutPanel flp)
+        {
+            foreach (RadioButton btn in flp.Controls)
+            {
+                if (btn.Checked) return btn.Text;
+            }
+            return null;
+        }
         private void btn_id_Click(object sender, EventArgs e)
         {
             var dlg = new ColorDialog();
@@ -91,6 +110,20 @@ namespace LookAlikeForm
             btn_id.BackColor = dlg.Color;
             dlg.Dispose();
         }
-       // void Markseassons(string[]seasson)
+        string[] Markseassons()
+        {
+            string[] seasons_to_pass = new string[0];
+            foreach (CheckBox box in flowLayoutPanel1.Controls)
+            {
+                if (box.Checked)
+                {
+                    Array.Resize(ref seasons_to_pass, seasons_to_pass.Length +1);
+                    seasons_to_pass[seasons_to_pass.Length] = box.Text;
+                }
+            }
+            return seasons_to_pass;
+        }
+
+        
     }
 }

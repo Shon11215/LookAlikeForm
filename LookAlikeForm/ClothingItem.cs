@@ -27,20 +27,18 @@ namespace LookAlikeForm
         bool is_favorite, is_casual;
         static uint _idCounter= 1000;
 
-        public ClothingItem(string user_id, string color, string name, string[] seasson, bool is_favorite, int usage, string type, string brand, int cost, int _size, bool is_casual) : this(name, is_casual)
+        public ClothingItem(string user_id, string color, string name, string[] seasson, bool is_favorite, string usage, string type, string brand, int cost, string _size, bool is_casual) : this(name, is_casual)
         {
             _uint = IdCounter++;
             this.user_id = user_id;
             this.Cost = cost;
-            this.Usage = (Usage)usage;
+            this.Usage = (Usage)Enum.Parse(typeof(Usage),usage);
             this.color = color;
-            this.Size = (Sizes)_size;
+            this.Size = (Sizes)Enum.Parse(typeof(Sizes),_size);
             this.seasons = seasson;
-            this.is_favorite = true;
-            //this.name = name;
+            this.is_favorite = is_favorite;
             this.brand = brand;
             this.type = type;
-            //SetIsCasual(is_casual);
 
         }
 
@@ -74,16 +72,8 @@ namespace LookAlikeForm
         internal Usage Usage
         {
             get => usage;
-            set
-            {
-                int num_value = (int)value;
-                while (num_value < 1 || num_value > 3)
-                {
-                    Console.Write("Please enter a number between 1-3 for the usage rate: ");
-                    num_value = int.Parse(Console.ReadLine());
-                }
-                usage = (Usage)value;
-            }
+            set => usage = value;
+            
         }
 
         internal Sizes Size

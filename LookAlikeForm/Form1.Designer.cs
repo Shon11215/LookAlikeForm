@@ -36,6 +36,7 @@
             this.txt_name = new System.Windows.Forms.TextBox();
             this.lbl_color = new System.Windows.Forms.Label();
             this.pnl_create = new System.Windows.Forms.Panel();
+            this.btn_id = new System.Windows.Forms.Button();
             this.btn_create = new System.Windows.Forms.Button();
             this.lbl_casual = new System.Windows.Forms.Label();
             this.chk_casual = new System.Windows.Forms.CheckBox();
@@ -57,7 +58,6 @@
             this.lbl_brand = new System.Windows.Forms.Label();
             this.lbl_type = new System.Windows.Forms.Label();
             this.lbl_price = new System.Windows.Forms.Label();
-            this.btn_id = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.pnl_create.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -193,11 +193,21 @@
             this.pnl_create.Controls.Add(this.txt_name);
             this.pnl_create.Controls.Add(this.lbl_color);
             this.pnl_create.Controls.Add(this.lbl_name);
-            this.pnl_create.Location = new System.Drawing.Point(35, 27);
+            this.pnl_create.Location = new System.Drawing.Point(73, 42);
             this.pnl_create.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_create.Name = "pnl_create";
             this.pnl_create.Size = new System.Drawing.Size(606, 415);
             this.pnl_create.TabIndex = 8;
+            // 
+            // btn_id
+            // 
+            this.btn_id.Location = new System.Drawing.Point(247, 51);
+            this.btn_id.Name = "btn_id";
+            this.btn_id.Size = new System.Drawing.Size(74, 24);
+            this.btn_id.TabIndex = 20;
+            this.btn_id.Text = "click";
+            this.btn_id.UseVisualStyleBackColor = true;
+            this.btn_id.Click += new System.EventHandler(this.btn_id_Click);
             // 
             // btn_create
             // 
@@ -356,7 +366,7 @@
             // 
             // txt_NewItemPrice
             // 
-            this.txt_NewItemPrice.Location = new System.Drawing.Point(247, 107);
+            this.txt_NewItemPrice.Location = new System.Drawing.Point(249, 107);
             this.txt_NewItemPrice.Margin = new System.Windows.Forms.Padding(2);
             this.txt_NewItemPrice.Name = "txt_NewItemPrice";
             this.txt_NewItemPrice.Size = new System.Drawing.Size(68, 20);
@@ -391,16 +401,6 @@
             this.lbl_price.Size = new System.Drawing.Size(40, 13);
             this.lbl_price.TabIndex = 4;
             this.lbl_price.Text = "Price - ";
-            // 
-            // btn_id
-            // 
-            this.btn_id.Location = new System.Drawing.Point(247, 51);
-            this.btn_id.Name = "btn_id";
-            this.btn_id.Size = new System.Drawing.Size(74, 24);
-            this.btn_id.TabIndex = 20;
-            this.btn_id.Text = "click";
-            this.btn_id.UseVisualStyleBackColor = true;
-            this.btn_id.Click += new System.EventHandler(this.btn_id_Click);
             // 
             // Form1
             // 
