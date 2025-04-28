@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using static System.Net.WebRequestMethods;
 
 namespace LookAlikeForm
 {
@@ -45,13 +46,16 @@ namespace LookAlikeForm
 
         private void btm_sumbit_Click(object sender, EventArgs e)
         {
-            if (btm_sumbit.Enabled)
+            curr_id = Login(users, out curr_user);
+            if (curr_id != null)
             {
-                curr_user = Login(users, out curr_id);
+                OpenPage(pnl_login, false);
+                OpenPage(pnl_main, true);
+                lbl_hello.Text += $"{curr_user}!";
             }
         }
 
-        private string Login(User[] users, out string userid)
+        private string Login(User[] users, out string curr_user)
         {
             string email = txt_email_info.Text;
             string password = txt_pass.Text;
@@ -60,7 +64,7 @@ namespace LookAlikeForm
                 if (users[i].Email == email && users[i].Password == password)
                 {
                     btm_sumbit.Enabled = false;
-                    userid = users[i].UserId;
+                    curr_user = users[i].FirstName;
                     return users[i].UserId;
 
                 }
@@ -69,7 +73,7 @@ namespace LookAlikeForm
             txt_email_info.Text = "";
             txt_pass.Text = "";
             MessageBox.Show("Wrong Email or Password. ");
-            userid = null;
+            curr_user = null;
             return null;
 
         }
@@ -85,15 +89,60 @@ namespace LookAlikeForm
                 flp.Controls.Add(radio_btn);
             }
         }
+        void CreateButtons()
+        {
+            flp_item_buttons.Controls.Clear();
+            foreach (ClothingItem item in clothes)
+            {
+                if (item == null) continue;
+                Button btn = new Button();
+                btn.Text = item.Name;
+                btn.Size = new Size(250, 75);
+                btn.Font = new Font("Segoe UI", 18, FontStyle.Bold); 
+                btn.TextAlign = ContentAlignment.MiddleCenter;
+                btn.Tag = item;
+                btn.Click += Btn_Click;
+                flp_item_buttons.Controls.Add((Button)btn);
+            }
+
+
+        }
+
+        private void Btn_Click(object sender, EventArgs e)
+        {
+            Button clickedButton = sender as Button;
+            ClothingItem clickedItem = clickedButton.Tag as ClothingItem;
+            string seasons = string.Join(", ", clickedItem.Seasons);
+
+            lst_item.View = View.List;
+            lst_item.Clear();
+
+            lbl_item_name.Text = clickedItem.Name; 
+            lst_item.Items.Add("Size: " + clickedItem.Size);
+            lst_item.Items.Add(clickedItem.Color);
+            lst_item.Items.Add("Price: " + clickedItem.Cost);
+            lst_item.Items.Add("How often: " + clickedItem.Usage);
+            lst_item.Items.Add("Type: " + clickedItem.Type);
+            lst_item.Items.Add("Brand: " + clickedItem.Brand);
+            lst_item.Items.Add("Seasons: " + seasons);
+            lst_item.Items.Add("Favorite?: " + (clickedItem.Is_favorite?"yes":"no"));
+            lst_item.Items.Add("Casual?: " + (clickedItem.Is_casual?"yes":"no"));
+
+
+
+        }
 
         private void btn_create_Click(object sender, EventArgs e)
         {
             int price;
             if (RadioCheck(flp_sizes) != null && RadioCheck(flp_usage) != null &&
-                int.TryParse(txt_NewItemPrice.Text, out price) && price >= 0){
+                int.TryParse(txt_NewItemPrice.Text, out price) && price >= 0)
+            {
                 ClothingItem item = new ClothingItem(curr_id, btn_id.BackColor.ToString(), txt_name.Text, Markseassons(), chk_favorite.Checked, RadioCheck(flp_usage),
                txt_NewItemType.Text, Txt_NewItemBrand.Text, int.Parse(txt_NewItemPrice.Text), RadioCheck(flp_sizes), chk_casual.Checked);
                 is_valid = true;
+                Array.Resize(ref clothes, clothes.Length + 1);
+                clothes[clothes.Length - 1] = item;
             }
             MessageBox.Show(is_valid ? "Item was made!" : "Invalid item please enter valid item!");
             ClearBtn();
@@ -123,16 +172,15 @@ namespace LookAlikeForm
             chk_casual.Checked = false;
         }
 
-
-            string RadioCheck(FlowLayoutPanel flp)
+        string RadioCheck(FlowLayoutPanel flp)
+        {
+            foreach (RadioButton btn in flp.Controls)
             {
-                foreach (RadioButton btn in flp.Controls)
-                {
-                    if (btn.Checked) return btn.Text;
-                }
-                return null;
-            } 
-        
+                if (btn.Checked) return btn.Text;
+            }
+            return null;
+        }
+
         private void btn_id_Click(object sender, EventArgs e)
         {
             var dlg = new ColorDialog();
@@ -148,13 +196,45 @@ namespace LookAlikeForm
             {
                 if (box.Checked)
                 {
-                    Array.Resize(ref seasons_to_pass, seasons_to_pass.Length +1);
-                    seasons_to_pass[seasons_to_pass.Length-1] = box.Text;
+                    Array.Resize(ref seasons_to_pass, seasons_to_pass.Length + 1);
+                    seasons_to_pass[seasons_to_pass.Length - 1] = box.Text;
                 }
             }
             return seasons_to_pass;
         }
+        void OpenPage(Panel pnl, bool state)
+        {
+            pnl.Visible = state;
+        }
 
-        
+        private void btn_NewItem_Click(object sender, EventArgs e)
+        {
+            OpenPage(pnl_main, false);
+            OpenPage(pnl_create, true);
+        }
+
+        private void Btn_seeItem_Click(object sender, EventArgs e)
+        {
+            OpenPage(pnl_main, false);
+            OpenPage(pnl_wardrobe, true);
+            CreateButtons();
+        }
+
+        private void btn_back_make_Click(object sender, EventArgs e)
+        {
+            OpenPage(pnl_create, false);
+            OpenPage(pnl_main, true);
+        }
+
+        private void btn_wardrobe_back_Click(object sender, EventArgs e)
+        {
+            OpenPage(pnl_wardrobe, false);
+            OpenPage(pnl_main, true);
+        }
+
+        private void pnl_login_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

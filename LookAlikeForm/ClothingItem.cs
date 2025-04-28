@@ -48,41 +48,19 @@ namespace LookAlikeForm
             this.name = name;
             this.is_casual = is_casual;
         }
-        public void Print()
-        {
 
-        }
+        public int Cost{get => cost;set => cost = value; }
+        internal Usage Usage{get => usage;set => usage = value;}
 
-
-        public int Cost
-        {
-            get => cost;
-            set => cost = value;
-
-        }
-
-
-        internal Usage Usage
-        {
-            get => usage;
-            set => usage = value;
-
-        }
-
-        internal Sizes Size
-        {
-            get => _size;
-            set => _size = value;
-        }
-        public string User_id
-        {
-            get => user_id;
-            set => user_id = value;
-        }
+        internal Sizes Size{get => _size;set => _size = value;}
+        public string User_id{get => user_id;set => user_id = value;}
         public static uint IdCounter { get => _idCounter; set => _idCounter = value; }
-
-
-
-
+        public string Name { get => name;}
+        public string Color { get => color;}
+        public string Type { get => type;}
+        public string Brand { get => brand;}
+        public string[] Seasons { get => seasons;}
+        public bool Is_favorite { get => is_favorite;}
+        public bool Is_casual { get => is_casual;}
     }
 }
