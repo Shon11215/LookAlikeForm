@@ -25,16 +25,16 @@ namespace LookAlikeForm
         string[] seasons;
         string user_id, name, color, type, brand;
         bool is_favorite, is_casual;
-        static uint _idCounter= 1000;
+        static uint _idCounter = 1000;
 
         public ClothingItem(string user_id, string color, string name, string[] seasson, bool is_favorite, string usage, string type, string brand, int cost, string _size, bool is_casual) : this(name, is_casual)
         {
             _uint = IdCounter++;
             this.user_id = user_id;
             this.Cost = cost;
-            this.Usage = (Usage)Enum.Parse(typeof(Usage),usage);
+            this.Usage = (Usage)Enum.Parse(typeof(Usage), usage);
             this.color = color;
-            this.Size = (Sizes)Enum.Parse(typeof(Sizes),_size);
+            this.Size = (Sizes)Enum.Parse(typeof(Sizes), _size);
             this.seasons = seasson;
             this.is_favorite = is_favorite;
             this.brand = brand;
@@ -50,30 +50,23 @@ namespace LookAlikeForm
         }
         public void Print()
         {
-         
+
         }
 
 
         public int Cost
         {
             get => cost;
-            set
-            {
-                while (value <= 0)
-                {
-                    Console.Write("Please enter a postive price tag: ");
-                    value = int.Parse(Console.ReadLine());
-                }
-                cost = value;
-            }
+            set => cost = value;
+
         }
-       
+
 
         internal Usage Usage
         {
             get => usage;
             set => usage = value;
-            
+
         }
 
         internal Sizes Size
@@ -86,10 +79,10 @@ namespace LookAlikeForm
             get => user_id;
             set => user_id = value;
         }
-        public static uint IdCounter { get => _idCounter; set => _idCounter=value; }
+        public static uint IdCounter { get => _idCounter; set => _idCounter = value; }
 
-        
-       
-      
+
+
+
     }
 }

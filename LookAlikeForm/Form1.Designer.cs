@@ -67,10 +67,9 @@
             // 
             this.lbl_welcome.AutoSize = true;
             this.lbl_welcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_welcome.Location = new System.Drawing.Point(151, 74);
-            this.lbl_welcome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_welcome.Location = new System.Drawing.Point(201, 91);
             this.lbl_welcome.Name = "lbl_welcome";
-            this.lbl_welcome.Size = new System.Drawing.Size(253, 20);
+            this.lbl_welcome.Size = new System.Drawing.Size(307, 25);
             this.lbl_welcome.TabIndex = 0;
             this.lbl_welcome.Text = "Welcome to your digital closet:";
             // 
@@ -78,10 +77,9 @@
             // 
             this.lbl_email.AutoSize = true;
             this.lbl_email.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_email.Location = new System.Drawing.Point(99, 134);
-            this.lbl_email.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_email.Location = new System.Drawing.Point(132, 165);
             this.lbl_email.Name = "lbl_email";
-            this.lbl_email.Size = new System.Drawing.Size(52, 17);
+            this.lbl_email.Size = new System.Drawing.Size(62, 20);
             this.lbl_email.TabIndex = 1;
             this.lbl_email.Text = "Email:";
             // 
@@ -89,35 +87,34 @@
             // 
             this.lbl_pass.AutoSize = true;
             this.lbl_pass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_pass.Location = new System.Drawing.Point(99, 180);
-            this.lbl_pass.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_pass.Location = new System.Drawing.Point(132, 222);
             this.lbl_pass.Name = "lbl_pass";
-            this.lbl_pass.Size = new System.Drawing.Size(81, 17);
+            this.lbl_pass.Size = new System.Drawing.Size(95, 20);
             this.lbl_pass.TabIndex = 2;
             this.lbl_pass.Text = "password:";
             // 
             // txt_email_info
             // 
-            this.txt_email_info.Location = new System.Drawing.Point(171, 133);
-            this.txt_email_info.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_email_info.Location = new System.Drawing.Point(228, 164);
+            this.txt_email_info.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_email_info.Name = "txt_email_info";
-            this.txt_email_info.Size = new System.Drawing.Size(121, 20);
+            this.txt_email_info.Size = new System.Drawing.Size(160, 22);
             this.txt_email_info.TabIndex = 3;
             // 
             // txt_pass
             // 
-            this.txt_pass.Location = new System.Drawing.Point(198, 179);
-            this.txt_pass.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_pass.Location = new System.Drawing.Point(264, 220);
+            this.txt_pass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_pass.Name = "txt_pass";
-            this.txt_pass.Size = new System.Drawing.Size(93, 20);
+            this.txt_pass.Size = new System.Drawing.Size(123, 22);
             this.txt_pass.TabIndex = 4;
             // 
             // btm_sumbit
             // 
-            this.btm_sumbit.Location = new System.Drawing.Point(198, 239);
-            this.btm_sumbit.Margin = new System.Windows.Forms.Padding(2);
+            this.btm_sumbit.Location = new System.Drawing.Point(264, 294);
+            this.btm_sumbit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btm_sumbit.Name = "btm_sumbit";
-            this.btm_sumbit.Size = new System.Drawing.Size(64, 34);
+            this.btm_sumbit.Size = new System.Drawing.Size(85, 42);
             this.btm_sumbit.TabIndex = 5;
             this.btm_sumbit.Text = "submit";
             this.btm_sumbit.UseVisualStyleBackColor = true;
@@ -131,11 +128,11 @@
             this.groupBox1.Controls.Add(this.lbl_email);
             this.groupBox1.Controls.Add(this.txt_email_info);
             this.groupBox1.Controls.Add(this.lbl_pass);
-            this.groupBox1.Location = new System.Drawing.Point(3, 2);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Location = new System.Drawing.Point(4, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(37, 21);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(49, 26);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
@@ -143,30 +140,28 @@
             // lbl_name
             // 
             this.lbl_name.AutoSize = true;
-            this.lbl_name.Location = new System.Drawing.Point(198, 33);
-            this.lbl_name.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_name.Location = new System.Drawing.Point(264, 41);
             this.lbl_name.Name = "lbl_name";
-            this.lbl_name.Size = new System.Drawing.Size(44, 13);
+            this.lbl_name.Size = new System.Drawing.Size(54, 16);
             this.lbl_name.TabIndex = 0;
             this.lbl_name.Text = "Name - ";
             this.lbl_name.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txt_name
             // 
-            this.txt_name.Location = new System.Drawing.Point(247, 31);
-            this.txt_name.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_name.Location = new System.Drawing.Point(329, 38);
+            this.txt_name.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_name.Multiline = true;
             this.txt_name.Name = "txt_name";
-            this.txt_name.Size = new System.Drawing.Size(68, 18);
+            this.txt_name.Size = new System.Drawing.Size(89, 21);
             this.txt_name.TabIndex = 1;
             // 
             // lbl_color
             // 
             this.lbl_color.AutoSize = true;
-            this.lbl_color.Location = new System.Drawing.Point(198, 60);
-            this.lbl_color.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_color.Location = new System.Drawing.Point(264, 74);
             this.lbl_color.Name = "lbl_color";
-            this.lbl_color.Size = new System.Drawing.Size(54, 13);
+            this.lbl_color.Size = new System.Drawing.Size(65, 16);
             this.lbl_color.TabIndex = 3;
             this.lbl_color.Text = "Color ID - ";
             // 
@@ -193,17 +188,18 @@
             this.pnl_create.Controls.Add(this.txt_name);
             this.pnl_create.Controls.Add(this.lbl_color);
             this.pnl_create.Controls.Add(this.lbl_name);
-            this.pnl_create.Location = new System.Drawing.Point(73, 42);
-            this.pnl_create.Margin = new System.Windows.Forms.Padding(2);
+            this.pnl_create.Location = new System.Drawing.Point(68, 31);
+            this.pnl_create.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnl_create.Name = "pnl_create";
-            this.pnl_create.Size = new System.Drawing.Size(606, 415);
+            this.pnl_create.Size = new System.Drawing.Size(808, 511);
             this.pnl_create.TabIndex = 8;
             // 
             // btn_id
             // 
-            this.btn_id.Location = new System.Drawing.Point(247, 51);
+            this.btn_id.Location = new System.Drawing.Point(329, 63);
+            this.btn_id.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_id.Name = "btn_id";
-            this.btn_id.Size = new System.Drawing.Size(74, 24);
+            this.btn_id.Size = new System.Drawing.Size(99, 30);
             this.btn_id.TabIndex = 20;
             this.btn_id.Text = "click";
             this.btn_id.UseVisualStyleBackColor = true;
@@ -211,9 +207,10 @@
             // 
             // btn_create
             // 
-            this.btn_create.Location = new System.Drawing.Point(240, 328);
+            this.btn_create.Location = new System.Drawing.Point(320, 404);
+            this.btn_create.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_create.Name = "btn_create";
-            this.btn_create.Size = new System.Drawing.Size(106, 33);
+            this.btn_create.Size = new System.Drawing.Size(141, 41);
             this.btn_create.TabIndex = 19;
             this.btn_create.Text = "Create item.";
             this.btn_create.UseVisualStyleBackColor = true;
@@ -222,45 +219,50 @@
             // lbl_casual
             // 
             this.lbl_casual.AutoSize = true;
-            this.lbl_casual.Location = new System.Drawing.Point(134, 290);
+            this.lbl_casual.Location = new System.Drawing.Point(179, 357);
+            this.lbl_casual.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_casual.Name = "lbl_casual";
-            this.lbl_casual.Size = new System.Drawing.Size(98, 13);
+            this.lbl_casual.Size = new System.Drawing.Size(119, 16);
             this.lbl_casual.TabIndex = 18;
             this.lbl_casual.Text = "Is the item casual ?";
             // 
             // chk_casual
             // 
             this.chk_casual.AutoSize = true;
-            this.chk_casual.Location = new System.Drawing.Point(240, 291);
+            this.chk_casual.Location = new System.Drawing.Point(320, 358);
+            this.chk_casual.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.chk_casual.Name = "chk_casual";
-            this.chk_casual.Size = new System.Drawing.Size(15, 14);
+            this.chk_casual.Size = new System.Drawing.Size(18, 17);
             this.chk_casual.TabIndex = 17;
             this.chk_casual.UseVisualStyleBackColor = true;
             // 
             // lbl_favorite
             // 
             this.lbl_favorite.AutoSize = true;
-            this.lbl_favorite.Location = new System.Drawing.Point(134, 268);
+            this.lbl_favorite.Location = new System.Drawing.Point(179, 330);
+            this.lbl_favorite.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_favorite.Name = "lbl_favorite";
-            this.lbl_favorite.Size = new System.Drawing.Size(102, 13);
+            this.lbl_favorite.Size = new System.Drawing.Size(123, 16);
             this.lbl_favorite.TabIndex = 16;
             this.lbl_favorite.Text = "Is the item favorite ?";
             // 
             // chk_favorite
             // 
             this.chk_favorite.AutoSize = true;
-            this.chk_favorite.Location = new System.Drawing.Point(240, 269);
+            this.chk_favorite.Location = new System.Drawing.Point(320, 331);
+            this.chk_favorite.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.chk_favorite.Name = "chk_favorite";
-            this.chk_favorite.Size = new System.Drawing.Size(15, 14);
+            this.chk_favorite.Size = new System.Drawing.Size(18, 17);
             this.chk_favorite.TabIndex = 15;
             this.chk_favorite.UseVisualStyleBackColor = true;
             // 
             // lbl_seasson
             // 
             this.lbl_seasson.AutoSize = true;
-            this.lbl_seasson.Location = new System.Drawing.Point(67, 233);
+            this.lbl_seasson.Location = new System.Drawing.Point(89, 287);
+            this.lbl_seasson.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_seasson.Name = "lbl_seasson";
-            this.lbl_seasson.Size = new System.Drawing.Size(166, 13);
+            this.lbl_seasson.Size = new System.Drawing.Size(204, 16);
             this.lbl_seasson.TabIndex = 14;
             this.lbl_seasson.Text = "Pick the seassons this item fit for -";
             // 
@@ -270,17 +272,19 @@
             this.flowLayoutPanel1.Controls.Add(this.chk_Fall);
             this.flowLayoutPanel1.Controls.Add(this.chk_winter);
             this.flowLayoutPanel1.Controls.Add(this.chk_spring);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(240, 223);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(320, 274);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(355, 40);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(473, 49);
             this.flowLayoutPanel1.TabIndex = 13;
             // 
             // chk_summer
             // 
             this.chk_summer.AutoSize = true;
-            this.chk_summer.Location = new System.Drawing.Point(3, 3);
+            this.chk_summer.Location = new System.Drawing.Point(4, 4);
+            this.chk_summer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.chk_summer.Name = "chk_summer";
-            this.chk_summer.Size = new System.Drawing.Size(64, 17);
+            this.chk_summer.Size = new System.Drawing.Size(79, 20);
             this.chk_summer.TabIndex = 15;
             this.chk_summer.Text = "Summer";
             this.chk_summer.UseVisualStyleBackColor = true;
@@ -288,9 +292,10 @@
             // chk_Fall
             // 
             this.chk_Fall.AutoSize = true;
-            this.chk_Fall.Location = new System.Drawing.Point(73, 3);
+            this.chk_Fall.Location = new System.Drawing.Point(91, 4);
+            this.chk_Fall.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.chk_Fall.Name = "chk_Fall";
-            this.chk_Fall.Size = new System.Drawing.Size(42, 17);
+            this.chk_Fall.Size = new System.Drawing.Size(51, 20);
             this.chk_Fall.TabIndex = 16;
             this.chk_Fall.Text = "Fall";
             this.chk_Fall.UseVisualStyleBackColor = true;
@@ -298,9 +303,10 @@
             // chk_winter
             // 
             this.chk_winter.AutoSize = true;
-            this.chk_winter.Location = new System.Drawing.Point(121, 3);
+            this.chk_winter.Location = new System.Drawing.Point(150, 4);
+            this.chk_winter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.chk_winter.Name = "chk_winter";
-            this.chk_winter.Size = new System.Drawing.Size(57, 17);
+            this.chk_winter.Size = new System.Drawing.Size(67, 20);
             this.chk_winter.TabIndex = 17;
             this.chk_winter.Text = "Winter";
             this.chk_winter.UseVisualStyleBackColor = true;
@@ -308,9 +314,10 @@
             // chk_spring
             // 
             this.chk_spring.AutoSize = true;
-            this.chk_spring.Location = new System.Drawing.Point(184, 3);
+            this.chk_spring.Location = new System.Drawing.Point(225, 4);
+            this.chk_spring.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.chk_spring.Name = "chk_spring";
-            this.chk_spring.Size = new System.Drawing.Size(56, 17);
+            this.chk_spring.Size = new System.Drawing.Size(68, 20);
             this.chk_spring.TabIndex = 18;
             this.chk_spring.Text = "Spring";
             this.chk_spring.UseVisualStyleBackColor = true;
@@ -318,98 +325,98 @@
             // lbl_usage
             // 
             this.lbl_usage.AutoSize = true;
-            this.lbl_usage.Location = new System.Drawing.Point(164, 139);
+            this.lbl_usage.Location = new System.Drawing.Point(219, 171);
+            this.lbl_usage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_usage.Name = "lbl_usage";
-            this.lbl_usage.Size = new System.Drawing.Size(82, 13);
+            this.lbl_usage.Size = new System.Drawing.Size(101, 16);
             this.lbl_usage.TabIndex = 0;
             this.lbl_usage.Text = "Choose one of -";
             // 
             // lbl_sizes
             // 
             this.lbl_sizes.AutoSize = true;
-            this.lbl_sizes.Location = new System.Drawing.Point(166, 84);
+            this.lbl_sizes.Location = new System.Drawing.Point(221, 103);
+            this.lbl_sizes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_sizes.Name = "lbl_sizes";
-            this.lbl_sizes.Size = new System.Drawing.Size(82, 13);
+            this.lbl_sizes.Size = new System.Drawing.Size(101, 16);
             this.lbl_sizes.TabIndex = 12;
             this.lbl_sizes.Text = "Choose one of -";
             // 
             // flp_usage
             // 
-            this.flp_usage.Location = new System.Drawing.Point(248, 130);
+            this.flp_usage.Location = new System.Drawing.Point(331, 160);
+            this.flp_usage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.flp_usage.Name = "flp_usage";
-            this.flp_usage.Size = new System.Drawing.Size(269, 27);
+            this.flp_usage.Size = new System.Drawing.Size(359, 33);
             this.flp_usage.TabIndex = 0;
             // 
             // flp_sizes
             // 
-            this.flp_sizes.Location = new System.Drawing.Point(249, 76);
-            this.flp_sizes.Margin = new System.Windows.Forms.Padding(2);
+            this.flp_sizes.Location = new System.Drawing.Point(332, 94);
+            this.flp_sizes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flp_sizes.Name = "flp_sizes";
-            this.flp_sizes.Size = new System.Drawing.Size(269, 28);
+            this.flp_sizes.Size = new System.Drawing.Size(359, 34);
             this.flp_sizes.TabIndex = 11;
             // 
             // Txt_NewItemBrand
             // 
-            this.Txt_NewItemBrand.Location = new System.Drawing.Point(246, 195);
-            this.Txt_NewItemBrand.Margin = new System.Windows.Forms.Padding(2);
+            this.Txt_NewItemBrand.Location = new System.Drawing.Point(328, 240);
+            this.Txt_NewItemBrand.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Txt_NewItemBrand.Name = "Txt_NewItemBrand";
-            this.Txt_NewItemBrand.Size = new System.Drawing.Size(68, 20);
+            this.Txt_NewItemBrand.Size = new System.Drawing.Size(89, 22);
             this.Txt_NewItemBrand.TabIndex = 9;
             // 
             // txt_NewItemType
             // 
-            this.txt_NewItemType.Location = new System.Drawing.Point(247, 164);
-            this.txt_NewItemType.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_NewItemType.Location = new System.Drawing.Point(329, 202);
+            this.txt_NewItemType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_NewItemType.Name = "txt_NewItemType";
-            this.txt_NewItemType.Size = new System.Drawing.Size(68, 20);
+            this.txt_NewItemType.Size = new System.Drawing.Size(89, 22);
             this.txt_NewItemType.TabIndex = 8;
             // 
             // txt_NewItemPrice
             // 
-            this.txt_NewItemPrice.Location = new System.Drawing.Point(249, 107);
-            this.txt_NewItemPrice.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_NewItemPrice.Location = new System.Drawing.Point(332, 132);
+            this.txt_NewItemPrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_NewItemPrice.Name = "txt_NewItemPrice";
-            this.txt_NewItemPrice.Size = new System.Drawing.Size(68, 20);
+            this.txt_NewItemPrice.Size = new System.Drawing.Size(89, 22);
             this.txt_NewItemPrice.TabIndex = 7;
             // 
             // lbl_brand
             // 
             this.lbl_brand.AutoSize = true;
-            this.lbl_brand.Location = new System.Drawing.Point(198, 195);
-            this.lbl_brand.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_brand.Location = new System.Drawing.Point(264, 240);
             this.lbl_brand.Name = "lbl_brand";
-            this.lbl_brand.Size = new System.Drawing.Size(44, 13);
+            this.lbl_brand.Size = new System.Drawing.Size(53, 16);
             this.lbl_brand.TabIndex = 6;
             this.lbl_brand.Text = "Brand - ";
             // 
             // lbl_type
             // 
             this.lbl_type.AutoSize = true;
-            this.lbl_type.Location = new System.Drawing.Point(198, 170);
-            this.lbl_type.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_type.Location = new System.Drawing.Point(264, 209);
             this.lbl_type.Name = "lbl_type";
-            this.lbl_type.Size = new System.Drawing.Size(40, 13);
+            this.lbl_type.Size = new System.Drawing.Size(49, 16);
             this.lbl_type.TabIndex = 5;
             this.lbl_type.Text = "Type - ";
             // 
             // lbl_price
             // 
             this.lbl_price.AutoSize = true;
-            this.lbl_price.Location = new System.Drawing.Point(198, 112);
-            this.lbl_price.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_price.Location = new System.Drawing.Point(264, 138);
             this.lbl_price.Name = "lbl_price";
-            this.lbl_price.Size = new System.Drawing.Size(40, 13);
+            this.lbl_price.Size = new System.Drawing.Size(48, 16);
             this.lbl_price.TabIndex = 4;
             this.lbl_price.Text = "Price - ";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(690, 468);
+            this.ClientSize = new System.Drawing.Size(920, 576);
             this.Controls.Add(this.pnl_create);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
